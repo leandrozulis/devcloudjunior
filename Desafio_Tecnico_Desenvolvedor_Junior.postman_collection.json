@@ -1,0 +1,277 @@
+{
+	"info": {
+		"_postman_id": "6fb06dd7-d46d-451e-bb03-e748433d5940",
+		"name": "Desafio_Tecnico_Desenvolvedor_Junior",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29043099"
+	},
+	"item": [
+		{
+			"name": "Rota 1 - Envia Cep",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cep\": \"87015310\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/cep",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"cep"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Envia Cep",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cep\": \"87015310\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/cep",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"cep"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "70"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"46-qYC3oz+GCmIvfWBxd+j8LjOvwP8\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 15 Oct 2024 03:50:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"cep\": \"87015310\",\n    \"status\": \"PENDENTE\",\n    \"id\": \"670de67e3dbc49fb34a83301\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Rota 2 - ConsultaCep",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3333/consultaCep/670de63e3dbc49fb34a832fe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"consultaCep",
+						"670de63e3dbc49fb34a832fe"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Rota 2 - ConsultaCep",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3333/consultaCep/670de63e3dbc49fb34a832fe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"consultaCep",
+								"670de63e3dbc49fb34a832fe"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "222"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"de-/YUPTLX7C0qODWBXP0//j9lw8e8\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 15 Oct 2024 03:53:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"cep\": \"87047550\",\n    \"status\": \"CONCLUIDO\",\n    \"data\": {\n        \"cep\": \"87047-550\",\n        \"logradouro\": \"Rua José Granado Parra\",\n        \"complemento\": \"\",\n        \"unidade\": \"\",\n        \"bairro\": \"Jardim Paulista\",\n        \"localidade\": \"Maringá\",\n        \"uf\": \"PR\",\n        \"ibge\": \"4115200\",\n        \"gia\": \"\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Rota 3 - Apenas para validar - consulta cep por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3333/consulta/670de63e3dbc49fb34a832fe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"consulta",
+						"670de63e3dbc49fb34a832fe"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Rota 3 - consulta cep por ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/consulta/670de63e3dbc49fb34a832fe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"consulta",
+								"670de63e3dbc49fb34a832fe"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "186"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ba-1p9/8Um17Bz0AMONCROBWQFWEyk\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 15 Oct 2024 03:53:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"retCep\": {\n        \"cep\": \"87047-550\",\n        \"logradouro\": \"Rua José Granado Parra\",\n        \"complemento\": \"\",\n        \"unidade\": \"\",\n        \"bairro\": \"Jardim Paulista\",\n        \"localidade\": \"Maringá\",\n        \"uf\": \"PR\",\n        \"ibge\": \"4115200\",\n        \"gia\": \"\"\n    }\n}"
+				}
+			]
+		}
+	]
+}
